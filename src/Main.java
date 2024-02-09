@@ -5,8 +5,8 @@ import linear.stack.Stack;
 public class Main extends Functions {
     public static void main(String[] args) {
         pl("<Programmed by: Barzi Yassin Karim>\n");
-        runDynamicArray();
-//        runStack();
+//        runDynamicArray();
+        runStack();
     }
 
     private static void runStack() {
