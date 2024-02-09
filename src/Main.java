@@ -1,12 +1,12 @@
-import dynamicarray.DynamicArray;
 import general.Functions;
-import stack.Stack;
+import linear.dynamicarray.DynamicArray;
+import linear.stack.Stack;
 
 public class Main extends Functions {
     public static void main(String[] args) {
         pl("<Programmed by: Barzi Yassin Karim>\n");
-//        runDynamicArray();
-        runStack();
+        runDynamicArray();
+//        runStack();
     }
 
     private static void runStack() {
@@ -69,7 +69,8 @@ public class Main extends Functions {
         }
     }
 
-    /*private static void runDynamicArray() {
+/*
+    private static void runDynamicArray() {
         pl("• • • Dynamic Array Program • • •");
         DynamicArray<Integer> arr = new DynamicArray<>();
         scInit();
@@ -131,7 +132,8 @@ public class Main extends Functions {
             pl("\n  # ");
         }
 
-    }*/
+    }
+*/
 }
 
 

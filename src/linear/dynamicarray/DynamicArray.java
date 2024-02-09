@@ -1,8 +1,6 @@
-package dynamicarray;
+package linear.dynamicarray;
 
 import general.Functions;
-
-import javax.swing.text.DefaultTextUI;
 
 public class DynamicArray<T> extends Functions {
 

@@ -1,4 +1,4 @@
-package stack;
+package linear.stack;
 
 import general.Functions;
 
@@ -15,7 +15,7 @@ public class Stack<T> extends Functions {
     // starting primary methods
     public void push(final T newData) {
         if (top == length()) {
-            plSpace("the stack is full, push canceled.");
+            plSpace("the linear.stack is full, push canceled.");
         } else {
             stack[top++] = newData;
         }
@@ -25,7 +25,7 @@ public class Stack<T> extends Functions {
     public T pop() {
         T willBePopped = null;
         if (top == 0) {
-            plSpace("the stack is already empty, pop canceled.");
+            plSpace("the linear.stack is already empty, pop canceled.");
         } else {
             willBePopped = stack[--top];
         }
@@ -36,7 +36,7 @@ public class Stack<T> extends Functions {
     public T peek() {
         T willBePeeked = null;
         if (top == 0) {
-            plSpace("the stack is empty, peek canceled.");
+            plSpace("the linear.stack is empty, peek canceled.");
         } else {
             willBePeeked = stack[(top-1)];
         }
@@ -49,7 +49,7 @@ public class Stack<T> extends Functions {
     }
 
     public String print() {
-        String output = "stack: [";
+        String output = "linear.stack: [";
         if (top == 0) {
             output += "]";
         } else {
