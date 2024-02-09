@@ -16,7 +16,7 @@ public class Stack<T> extends Functions {
         if (size >= 0) {
             initStack(size);
         } else {
-            pl("the array size is set to default size: '" + DEFAULT_SIZE + "'");
+            pl("the stack size is set to default size: '" + DEFAULT_SIZE + "'");
             initStack(DEFAULT_SIZE);
         }
     }
