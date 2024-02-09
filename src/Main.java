@@ -1,12 +1,76 @@
 import dynamicarray.DynamicArray;
 import general.Functions;
+import stack.Stack;
 
 public class Main extends Functions {
     public static void main(String[] args) {
-        runDynamicArray();
+        pl("<Programmed by: Barzi Yassin Karim>\n");
+//        runDynamicArray();
+        runStack();
     }
 
-    private static void runDynamicArray() {
+    private static void runStack() {
+        pl("• • • Stack Program • • •");
+        Stack<Integer> stack = new Stack<>();
+
+        pl("\nMenu:");
+        pl("------------------");
+        plSpace("1. Push");
+        plSpace("2. Pop");
+        plSpace("3. Peek");
+        plSpace("4. Count");
+        plSpace("5. Print");
+        plSpace("0. Exit");
+
+
+        scInit();
+        rnInit();
+        int cycle = 0;
+        while (true) {
+
+            pSpace("\n " + ++cycle + "• Enter your option: ");
+            int stackOption = inputInt();
+
+            switch (stackOption) {
+                case 1:
+                    pSpace("Enter value to push: ");
+                    int valueToPush = inputInt();
+                    stack.push(valueToPush);
+                    break;
+
+                case 2:
+                    plSpace("Popped: " + stack.pop());
+                    break;
+
+                case 3:
+                    plSpace("Peeked: " + stack.peek());
+                    break;
+
+                case 4:
+                    plSpace("Count: " + stack.count());
+                    break;
+
+                case 5:
+                    stack.print();
+                    break;
+
+                case 0:
+                    plSpace("\n</exited>");
+                    scDispose();
+                    rnDispose();
+                    System.exit(0);
+                    break;
+
+                default:
+                    pl("Invalid option. Try again.");
+                    break;
+            }
+            pl("\n  # ");
+        }
+    }
+
+    /*private static void runDynamicArray() {
+        pl("• • • Dynamic Array Program • • •");
         DynamicArray<Integer> arr = new DynamicArray<>();
         scInit();
         rnInit();
@@ -25,7 +89,7 @@ public class Main extends Functions {
         int cycle = 0;
         while (true) {
 
-            System.out.print("\n " + ++cycle + "• Enter your option: ");
+            pSpace("\n " + ++cycle + "• Enter your option: ");
             int option = inputInt();
 
             switch (option) {
@@ -67,7 +131,7 @@ public class Main extends Functions {
             pl("\n  # ");
         }
 
-    }
+    }*/
 }
 
 
