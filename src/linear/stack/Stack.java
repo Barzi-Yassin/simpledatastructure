@@ -7,8 +7,22 @@ public class Stack<T> extends Functions {
     private int top;
     private final int DEFAULT_SIZE = 4;
 
+    // starting constructor methods
     public Stack() {
-        stack = (T[]) new Object[DEFAULT_SIZE];
+        initStack(DEFAULT_SIZE);
+    }
+
+    public Stack(final int size) {
+        if (size >= 0) {
+            initStack(size);
+        } else {
+            pl("the array size is set to default size: '" + DEFAULT_SIZE + "'");
+            initStack(DEFAULT_SIZE);
+        }
+    }
+
+    private void initStack(final int size) {
+        stack = (T[]) new Object[size];
         top = 0;
     }
 
@@ -38,7 +52,7 @@ public class Stack<T> extends Functions {
         if (top == 0) {
             plSpace("the linear.stack is empty, peek canceled.");
         } else {
-            willBePeeked = stack[(top-1)];
+            willBePeeked = stack[(top - 1)];
         }
         print();
         return willBePeeked;
