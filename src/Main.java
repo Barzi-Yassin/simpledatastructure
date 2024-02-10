@@ -1,14 +1,78 @@
 import general.Functions;
 import linear.dynamicarray.DynamicArray;
+import linear.queue.Queue;
 import linear.stack.Stack;
 
 public class Main extends Functions {
     public static void main(String[] args) {
         pl("<Programmed by: Barzi Yassin Karim>\n");
 //        runDynamicArray();
-        runStack();
+//        runStack();
+        runQueue();
     }
 
+    private static void runQueue() {
+        pl("• • • Stack Program • • •");
+        Queue<Integer> queue = new Queue<>();
+
+        pl("\nMenu:");
+        pl("------------------");
+        plSpace("1. EnQueue");
+        plSpace("2. DeQueue");
+        plSpace("3. Count");
+        plSpace("4. Print");
+        plSpace("5. fill queue with 10 random numbers");
+        plSpace("0. Exit");
+
+
+        scInit();
+        rnInit();
+        int cycle = 0;
+        while (true) {
+
+            pSpace("\n " + ++cycle + "• Enter your option: ");
+            int queueOption = inputInt();
+
+            switch (queueOption) {
+                case 1:
+                    pSpace("Enter value to enQueue: ");
+                    int valueToEnqueue = inputInt();
+                    queue.enQueue(valueToEnqueue);
+                    break;
+
+                case 2:
+                    plSpace("DeQueued: " + queue.deQueue());
+                    break;
+
+                case 3:
+                    plSpace("Count: " + queue.count());
+                    break;
+
+                case 4:
+                    queue.print();
+                    break;
+
+                case 5:
+                    for (int i = 0; i < 10; i++)
+                        queue.enQueue(getRandomNumber(5));
+                    break;
+
+                case 0:
+                    plSpace("</exited>");
+                    scDispose();
+                    rnDispose();
+                    System.exit(0);
+                    break;
+
+                default:
+                    plSpace("Invalid option. Try again.");
+                    break;
+            }
+            pl("\n  # ");
+        }
+    }
+
+/*
     private static void runStack() {
         pl("• • • Stack Program • • •");
         Stack<Integer> stack = new Stack<>();
@@ -20,6 +84,7 @@ public class Main extends Functions {
         plSpace("3. Peek");
         plSpace("4. Count");
         plSpace("5. Print");
+        plSpace("6. fill array with 10 numbers");
         plSpace("0. Exit");
 
 
@@ -54,8 +119,13 @@ public class Main extends Functions {
                     stack.print();
                     break;
 
+                case 7:
+                    for (int i = 0; i < 10; i++)
+                        stack.push(getRandomNumber(5));
+                    break;
+
                 case 0:
-                    plSpace("\n</exited>");
+                    plSpace("</exited>");
                     scDispose();
                     rnDispose();
                     System.exit(0);
@@ -68,6 +138,7 @@ public class Main extends Functions {
             pl("\n  # ");
         }
     }
+*/
 
 /*
     private static void runDynamicArray() {
@@ -84,7 +155,7 @@ public class Main extends Functions {
         plSpace("4. Search");
         plSpace("5. Print");
         plSpace("6. Print with detail");
-        plSpace("7. fill array with 10 numbers");
+        plSpace("7. fill array with 10 random numbers");
         plSpace("0. Exit");
 
         int cycle = 0;
@@ -122,7 +193,7 @@ public class Main extends Functions {
                         arr.add(getRandomNumber(5));
                     break;
                 case 0:
-                    plSpace("\n</exited>");
+                    plSpace("</exited>");
                     scDispose();
                     rnDispose();
                     System.exit(0);
