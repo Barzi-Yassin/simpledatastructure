@@ -1,6 +1,8 @@
+import algorithms.sorting.Bubble;
+import algorithms.sorting.Insertion;
 import general.Functions;
-import linear.linkedlist.doubly.DoublyLinkedList;
-import linear.linkedlist.singly.SinglyLinkedList;
+
+import java.util.Arrays;
 
 public class Main extends Functions {
     public static void main(String[] args) {
@@ -9,12 +11,38 @@ public class Main extends Functions {
 //        runStack();
 //        runQueue();
 //        runSinglyLinkedList();
-        runDoublyLinkedList();
+//        runDoublyLinkedList();
+        runBubbleSort();
+        runInsertionSort();
     }
 
+    private static void runInsertionSort() {
+        pl("• • • InsertionSort Program • • •");
+        int[] arr = {0, 8, 1, 67, 1, 8, 7, 7, 2, 3};
+
+
+        pl("arr: " + Arrays.toString(arr));
+        int[] arrSortedImproved = Insertion.insertion(arr);
+        pl("arr sorted insertion: " + Arrays.toString(arrSortedImproved));
+    }
+
+    private static void runBubbleSort() {
+        pl("• • • BubbleSort Program • • •");
+        int[] arr = {0, 8, 1, 67, 1, 8, 7, 7, 2, 3};
+        pl("arr: " + Arrays.toString(arr));
+        pl("arr sorted: " + Arrays.toString(Bubble.bubble(arr)));
+
+        // improved bubble
+        pl("\n\n\n------------------------ improved \n---------------- ↓\n\n");
+        int[] arr1 = {0, 8, 1, 67, 1, 8, 7, 7, 2, 3}; // same content as arr to see the difference between bubble sort types speed.
+        pl("arr: " + Arrays.toString(arr1));
+        pl("arr sorted improved: " + Arrays.toString(Bubble.bubbleImproved(arr1)));
+
+    }
+
+/*
     private static void runDoublyLinkedList() {
-        pl("• • • DoublyLinkedList Program • • •");
-        DoublyLinkedList<Integer> dll = new DoublyLinkedList<>();
+5        DoublyLinkedList<Integer> dll = new DoublyLinkedList<>();
 
         pl("\nMenu:");
         pl("------------------");
@@ -128,6 +156,7 @@ public class Main extends Functions {
         }
 
     }
+*/
 
 
     /*private static void runSinglyLinkedList() {
