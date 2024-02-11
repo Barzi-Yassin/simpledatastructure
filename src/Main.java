@@ -1,16 +1,136 @@
 import general.Functions;
+import linear.linkedlist.doubly.DoublyLinkedList;
 import linear.linkedlist.singly.SinglyLinkedList;
 
 public class Main extends Functions {
     public static void main(String[] args) {
         pl("<Programmed by: Barzi Yassin Karim>\n");
-//        runDynamicArray();_
+//        runDynamicArray();
 //        runStack();
 //        runQueue();
-        runSinglyLinkedList();
+//        runSinglyLinkedList();
+        runDoublyLinkedList();
     }
 
-    private static void runSinglyLinkedList() {
+    private static void runDoublyLinkedList() {
+        pl("• • • DoublyLinkedList Program • • •");
+        DoublyLinkedList<Integer> dll = new DoublyLinkedList<>();
+
+        pl("\nMenu:");
+        pl("------------------");
+        plSpace("1. insertFront");
+        plSpace("2. insertRear");
+        plSpace("3. deleteFront");
+        plSpace("4. deleteRear");
+        plSpace("5. insertAt");
+        plSpace("6. deleteAt");
+        plSpace("7. Count");
+        plSpace("8. Print");
+        plSpace("9. Print in reverse");
+        plSpace("10. Search");
+        plSpace("11. Fill list with 10 random numbers");
+        plSpace("0. Exit");
+
+        scInit();
+        rnInit();
+
+        for (int i = 0; i < 10; i++)
+            dll.insertRear(i);
+//            dll.insertRear(getRandomNumber(5));
+        pl("\n");
+
+        dll.print();
+        dll.printReverse();
+
+
+        int cycle = 0;
+        while (true) {
+
+            pSpace("\n " + ++cycle + "• Enter your option: ");
+            int sllOption = inputInt();
+            int valueToInsert;
+            switch (sllOption) {
+                case 1:
+                    plSpace("insertFront;");
+                    pSpace("Enter value to insertFront: ");
+                    valueToInsert = inputInt();
+                    dll.insertFront(valueToInsert);
+                    break;
+
+                case 2:
+                    plSpace("insertRear;");
+                    pSpace("Enter value to insertRear: ");
+                    valueToInsert = inputInt();
+                    dll.insertRear(valueToInsert);
+                    break;
+
+                case 3:
+                    plSpace("deleteFront;");
+                    dll.deleteFront();
+                    break;
+
+                case 4:
+                    plSpace("deleteRear;");
+                    dll.deleteRear();
+                    break;
+
+                case 5:
+                    plSpace("insertAt;");
+                    pSpace("Enter index: ");
+                    int indexToInsert = inputInt();
+                    pSpace("Enter value: ");
+                    valueToInsert = inputInt();
+                    dll.insertAt(indexToInsert, valueToInsert);
+                    break;
+
+                case 6:
+                    plSpace("deleteAt;");
+                    pSpace("Enter index: ");
+                    int indexToDelete = inputInt();
+                    dll.deleteAt(indexToDelete);
+                    break;
+
+                case 7:
+                    plSpace("Count: " + dll.length());
+                    break;
+
+                case 8:
+                    dll.print();
+                    break;
+
+                case 9:
+                    dll.printReverse();
+                    break;
+
+                case 10:
+                    pSpace("Enter number to find: ");
+                    final int numToFind = inputInt();
+                    dll.search(numToFind);
+                    break;
+
+                case 11:
+                    for (int i = 0; i < 10; i++)
+                        dll.insertRear(getRandomNumber(5));
+                    break;
+
+                case 0:
+                    plSpace("</exited>");
+                    scDispose();
+                    rnDispose();
+                    System.exit(0);
+                    break;
+
+                default:
+                    plSpace("Invalid option. Try again.");
+                    break;
+            }
+            pl("\n  # ");
+        }
+
+    }
+
+
+    /*private static void runSinglyLinkedList() {
         pl("• • • SinglyLinkedList Program • • •");
         SinglyLinkedList<Integer> sll = new SinglyLinkedList<>();
 
@@ -114,7 +234,7 @@ public class Main extends Functions {
             pl("\n  # ");
         }
 
-    }
+    }*/
 
     /*private static void runQueue() {
         pl("• • • Stack Program • • •");
